@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const page = () => {
   return (
-    <div>padigree</div>
-  )
-}
+    <>
+      Home
+    </>
+  );
+};
 
-export default page
+export default page;
