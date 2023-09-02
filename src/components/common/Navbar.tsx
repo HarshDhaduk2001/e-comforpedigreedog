@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#FEF8F0] cursor-pointer">
+    <header className="bg-[#FEF8F0] cursor-pointer">
       <div className="flex items-center justify-center w-[100%] py-8 md:py-4 h-[60px]">
         <span className="items-center justify-center hidden md:flex">
           <LogoIcon />
@@ -125,7 +125,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 
