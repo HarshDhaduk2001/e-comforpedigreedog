@@ -33,14 +33,14 @@ const Navbar = () => {
 
   return (
     <header className="bg-[#FEF8F0] cursor-pointer">
-      <div className="flex items-center justify-center w-[100%] py-8 md:py-4 h-[60px]">
-        <span className="items-center justify-center hidden md:flex">
+      <div className="flex items-center justify-center w-[100%] py-8 lg:py-4 h-[60px]">
+        <span className="items-center justify-center hidden lg:flex">
           <LogoIcon />
         </span>
-        <div className="md:hidden flex w-[20%] ml-6">
+        <div className="lg:hidden flex w-[20%] ml-6">
           <button
             type="button"
-            className="md:hidden text-gray-200 transition duration-300 focus:outline-none focus:text-white hover:text-white"
+            className="lg:hidden text-gray-200 transition duration-300 focus:outline-none focus:text-white hover:text-white"
             onClick={toggleMenu}
           >
             {isOpen ? (
@@ -62,18 +62,18 @@ const Navbar = () => {
             <SearchIcon />
           </span>
           <input
-            className="pl-10 md:pl-16 pr-4 py-2 w-[100%] border rounded-full border-[#111111] focus:outline-none focus:border-blue-500 placeholder-[#E1E1E1]"
+            className="pl-10 lg:pl-16 pr-4 py-2 w-[100%] border rounded-full border-[#111111] focus:outline-none focus:border-blue-500 placeholder-[#E1E1E1]"
             placeholder="Search anything for pet..."
           />
         </div>
         <div className="flex items-center justify-center w-[30%] gap-8">
-          <span className="items-center justify-center gap-1 hidden md:flex">
+          <span className="items-center justify-center gap-1 hidden lg:flex">
             <PhoneIcon />
             Support
           </span>
           <span className="flex items-center justify-center gap-1">
             <AvatarIcon />
-            <span className="hidden md:flex">Account</span>
+            <span className="hidden lg:flex">Account</span>
           </span>
           <span className="flex items-center justify-center gap-1">
             <span className="relative">
@@ -84,12 +84,12 @@ const Navbar = () => {
                 </p>
               </span>
             </span>
-            <span className="hidden md:flex">Cart</span>
+            <span className="hidden lg:flex">Cart</span>
           </span>
         </div>
       </div>
 
-      <div className="gap-12 mt-4 pb-2 text-lg hidden md:flex items-center justify-center">
+      <div className="gap-12 mt-4 pb-2 text-lg hidden lg:flex items-center justify-center">
         {navItem.map((i: any) => (
           <Link
             href={i.link}
