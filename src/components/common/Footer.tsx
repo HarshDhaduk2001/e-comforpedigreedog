@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Facebook from "../../assets/images/facebook.png";
-import Instagram from "../../assets/images/instagram.png";
-import Twitter from "../../assets/images/twitter.png";
-import Linkedin from "../../assets/images/linkedin.png";
+import Facebook from "../../assets/images/common/facebook.png";
+import Instagram from "../../assets/images/common/instagram.png";
+import Twitter from "../../assets/images/common/twitter.png";
+import Linkedin from "../../assets/images/common/linkedin.png";
 
 const images = [Facebook.src, Instagram.src, Twitter.src, Linkedin.src];
 
 const Footer = () => {
   return (
     <footer className="bg-blue flex flex-col items-center justify-center text-sm lg:text-base py-5 w-[100%] text-white">
-      <span className="hidden lg:flex w-[80%]">
+      <span className="hidden lg:block w-[80%]">
         <b>Parents also searched:</b> Dog Food | Dry Dog Food | Cat Food | Wet
         Cat Food | Woffy Treats | Royal Canin | Woffy Deals | Royal Canin Dog
         Food | Pedigree Food | Whiskas | Cat Litter & Accessories | Cat Toys |

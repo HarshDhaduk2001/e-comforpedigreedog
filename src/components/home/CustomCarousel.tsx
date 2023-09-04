@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState, useEffect } from "react";
-import Poster1 from "../../assets/images/Poster1.png";
-import Poster2 from "../../assets/images/Poster2.png";
-import Poster3 from "../../assets/images/Poster3.png";
-import Poster4 from "../../assets/images/Poster4.png";
+import Poster1 from "../../assets/images/common/Poster1.png";
+import Poster2 from "../../assets/images/common/Poster2.png";
+import Poster3 from "../../assets/images/common/Poster3.png";
+import Poster4 from "../../assets/images/common/Poster4.png";
 
 const images = [Poster1.src, Poster2.src, Poster3.src, Poster4.src];
 

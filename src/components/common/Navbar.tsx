@@ -66,7 +66,7 @@ const Navbar = () => {
             placeholder="Search anything for pet..."
           />
         </div>
-        <div className="flex items-center justify-center w-[30%] gap-8">
+        <div className="flex items-center justify-center w-[30%] gap-3 lg:gap-8">
           <span className="items-center justify-center gap-1 hidden lg:flex">
             <PhoneIcon />
             Support
