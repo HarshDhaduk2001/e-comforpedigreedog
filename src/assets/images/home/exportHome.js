@@ -13,6 +13,7 @@ import Vergeterian from "./vegeterian.png";
 import Winter from "./winter.png";
 import Img1 from "./image 1.png";
 import Img2 from "./image 2.png";
+import Dog from "./dog.png";
 
 export {
   Accessories,
@@ -30,4 +31,5 @@ export {
   Winter,
   Img1,
   Img2,
+  Dog
 };

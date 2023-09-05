@@ -32,7 +32,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#FEF8F0] cursor-pointer">
+    <header className="bg-[#FEF8F0] cursor-pointer sticky top-0 z-10 shadow-xl">
+      <div className="bg-black h-2"></div>
       <div className="flex items-center justify-center w-[100%] py-8 lg:py-4 h-[60px]">
         <span className="items-center justify-center hidden lg:flex">
           <LogoIcon />
