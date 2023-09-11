@@ -77,10 +77,10 @@ const ReviewCarousel = () => {
 
   return (
     <div className="relative">
-      <div className={`grid grid-cols-${numColumns} gap-4 mx-8 lg:mx-32 text-[#9A9A9A]`}>
+      <div className={`grid grid-cols-${numColumns} gap-4 mx-8 lg:mx-32 text-[#9A9A9A] lg:flex`}>
         {visibleReviews.map((review) => (
           <div key={review.id} className="px-4">
-            <div className="p-6 rounded-lg shadow-lg flex flex-col items-center justify-center bg-[#F9FAFB] h-[300px]">
+            <div className="p-6 rounded-lg shadow-lg flex flex-col items-center justify-center bg-[#F9FAFB] h-[350px] lg:h-[300px] lg:w-[380px]">
               <StarIcon />
               <p className="text-gray-700">{review.content}</p>
               <p className="text-gray-600 mt-4">- {review.author}</p>

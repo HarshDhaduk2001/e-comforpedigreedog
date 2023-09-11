@@ -14,6 +14,10 @@ import Winter from "./winter.png";
 import Img1 from "./image 1.png";
 import Img2 from "./image 2.png";
 import Dog from "./dog.png";
+import Product1 from "./product1.png";
+import Product2 from "./product2.png";
+import Product3 from "./product3.png";
+import Product4 from "./product4.png";
 
 export {
   Accessories,
@@ -31,5 +35,9 @@ export {
   Winter,
   Img1,
   Img2,
-  Dog
+  Dog,
+  Product1,
+  Product2,
+  Product3,
+  Product4,
 };

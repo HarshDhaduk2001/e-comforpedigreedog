@@ -10,15 +10,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const navItem = [
-  { name: "Food", link: "/" },
-  { name: "Clothing", link: "/clothing" },
-  { name: "Accessories", link: "/accessories" },
-  { name: "Vaccine", link: "/vaccine" },
-  { name: "Treat & Toys", link: "/treatToys" },
-  { name: "Pet Essentials", link: "/petEssentials" },
-  { name: "Health", link: "/health" },
-  { name: "Personalised Me", link: "/personalisedMe" },
-  { name: "FAQs", link: "/faqs" },
+  { name: "Home", link: "/" },
+  { name: "Products", link: "/products" },
   { name: "About Us", link: "/aboutUs" },
   { name: "Contact Us", link: "/contactUs" },
 ];
@@ -107,7 +100,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="z-10 fixed bg-[#FEF8F0] w-full mx-auto py-8 text-center">
+        <div className="z-10 fixed bg-[#FEF8F0] w-full mx-auto py-8 text-center h-screen">
           <div className="gap-12 mt-4 pb-2 text-lg flex flex-col items-center justify-center">
             {navItem.map((i: any) => (
               <Link

@@ -26,6 +26,8 @@ import {
   Dog,
 } from "../assets/images/home/exportHome";
 import ReviewCarousel from "@/components/home/ReviewCarousel";
+import ProductCard from "@/components/home/ProductCard";
+import Link from "next/link";
 
 const shopping = [
   {
@@ -152,6 +154,21 @@ const page = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="flex flex-col items-center justify-center py-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 w-full py-4 gap-8 md:gap-12 lg:gap-16">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
+        <Link href={"/products"} className="text-orange cursor-pointer">
+          See All Products
+        </Link>
       </div>
       <img src={Img1.src} alt="image1" className="w-full h-full" />
       <div className="flex flex-col lg:flex-row items-center justify-center my-7 lg:mx-36">
