@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StarIcon from "../../assets/icons/home/StarIcon";
+import { Star } from "../../assets/icons/home/export";
 
 const reviews = [
   {
@@ -41,47 +41,55 @@ const reviews = [
 ];
 
 const ReviewCarousel = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
-  
-    // Check if the screen width is below a certain threshold to determine if it's a mobile device
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768); // Adjust the threshold as needed
-      };
-  
-      handleResize();
-  
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-  
-    const prevSlide = () => {
-      setCurrentSlide((prev) =>
-        prev === 0 ? Math.floor(reviews.length / (isMobile ? 1 : 3)) - 1 : prev - 1
-      );
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the screen width is below a certain threshold to determine if it's a mobile device
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust the threshold as needed
     };
-  
-    const nextSlide = () => {
-      setCurrentSlide((prev) =>
-        prev === Math.floor(reviews.length / (isMobile ? 1 : 3)) - 1 ? 0 : prev + 1
-      );
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
-  
-    const numColumns = isMobile ? 1 : 3;
-    const visibleReviews = reviews.slice(currentSlide * numColumns, currentSlide * numColumns + numColumns);
-  
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0
+        ? Math.floor(reviews.length / (isMobile ? 1 : 3)) - 1
+        : prev - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === Math.floor(reviews.length / (isMobile ? 1 : 3)) - 1
+        ? 0
+        : prev + 1
+    );
+  };
+
+  const numColumns = isMobile ? 1 : 3;
+  const visibleReviews = reviews.slice(
+    currentSlide * numColumns,
+    currentSlide * numColumns + numColumns
+  );
 
   return (
     <div className="relative">
-      <div className={`grid grid-cols-${numColumns} gap-4 mx-8 lg:mx-32 text-[#9A9A9A] lg:flex`}>
+      <div
+        className={`grid grid-cols-${numColumns} gap-4 mx-8 lg:mx-32 text-[#9A9A9A] lg:flex`}
+      >
         {visibleReviews.map((review) => (
           <div key={review.id} className="px-4">
             <div className="p-6 rounded-lg shadow-lg flex flex-col items-center justify-center bg-[#F9FAFB] h-[350px] lg:h-[300px] lg:w-[380px]">
-              <StarIcon />
+              <Star />
               <p className="text-gray-700">{review.content}</p>
               <p className="text-gray-600 mt-4">- {review.author}</p>
             </div>

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Product4 } from "@/assets/images/home/exportHome";
-import StarIcon from "@/assets/icons/home/StarIcon";
+import StarIcon from "@/assets/icons/home/starIcon";
 
 const ProductCard = () => {
   return (

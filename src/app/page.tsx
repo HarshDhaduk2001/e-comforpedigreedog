@@ -3,10 +3,7 @@
 "use client";
 import CustomCarousel from "@/components/home/CustomCarousel";
 import React from "react";
-import TruckIcon from "../assets/icons/home/TruckIcon";
-import SpeedIcon from "../assets/icons/home/SpeedIcon";
-import ChatIcon from "../assets/icons/home/ChatIcon";
-import DiscountIcon from "../assets/icons/home/DiscountIcon";
+import {Chat, Discount, Speed, Truck} from "../assets/icons/home/export";
 import {
   Accessories,
   Bed,
@@ -31,22 +28,22 @@ import Link from "next/link";
 
 const shopping = [
   {
-    icon: <TruckIcon />,
+    icon: <Truck />,
     title: "Free Shipping",
     desc: "On all prepaid order above Rs. 599",
   },
   {
-    icon: <SpeedIcon />,
+    icon: <Speed />,
     title: "Speedy Deliveries",
     desc: "Parcel dispatched within 24 hours",
   },
   {
-    icon: <ChatIcon />,
+    icon: <Chat />,
     title: "Chat With Us",
     desc: "Talk with us everyday, 10am to 8pm",
   },
   {
-    icon: <DiscountIcon />,
+    icon: <Discount />,
     title: "Amazing Value",
     desc: "Competitive pricing on the best products",
   },
