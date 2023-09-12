@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Product4 } from "@/assets/images/home/exportHome";
+import { Product1, Product2, Product3, Product4 } from "@/assets/images/home/exportHome";
 import StarIcon from "@/assets/icons/home/starIcon";
+import { StarEmpty } from "@/assets/icons/home/export";
 
 const ProductCard = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center cursor-pointer">
       <div className="bg-white rounded-lg text-[#9A9A9A] flex flex-col items-center justify-center border border-[#E1E1E1] w-[160px] md:w-[205px] relative text-[12px] md:text-[14px]">
         <img src={Product4.src} alt="img" className="w-[108px] h-[159px] p-1" />
         <span className="bg-blue text-white text-[9px] py-1 px-2 rounded-tl-lg absolute top-0 left-0">
@@ -26,18 +27,17 @@ const ProductCard = () => {
           <span className="text-sm text-[#9A9A9A]">Whiskas</span>
           <span className="flex items-center justify-center mt-1">
             <StarIcon />
+            <StarIcon />
+            <StarIcon />
+            <StarIcon />
+            <StarEmpty />
             <span className="text-[8px] text-[#9A9A9A] -mt-5 ml-8">
               (4.1) | 20 Reviews
             </span>
           </span>
-          <span className="flex items-center justify-center gap-3 -mt-3">
-            <button className="text-[8px] md:text-[10px] text-orange border border-[#9A9A9A] rounded-lg py-1 px-[3px] md:p-2">
-              Quick Shop
-            </button>{" "}
-            <button className="text-[8px] md:text-[10px] text-white bg-orange rounded-lg py-1 px-[3px] md:p-2">
-              Choose Options
+            <button className="text-[8px] md:text-[10px] text-white bg-orange rounded-lg py-1 px-[3px] md:p-2 -mt-3 w-[100%]">
+              Add to Cart
             </button>
-          </span>
         </div>
       </div>
     </div>

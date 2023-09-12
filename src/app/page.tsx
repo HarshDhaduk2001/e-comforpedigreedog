@@ -153,7 +153,7 @@ const page = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center py-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 w-full py-4 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 w-full py-4 gap-8 md:gap-12 lg:gap-16 lg:px-56">
           <ProductCard />
           <ProductCard />
           <ProductCard />
