@@ -342,27 +342,27 @@ const page = () => {
               type="text"
               name="name"
               placeholder="Enter Name"
-              className="border border-gray-500 py-2 px-4 w-[120%] lg:w-[50%]"
+              className="border border-gray rounded-lg py-2 px-4 w-[120%] lg:w-[50%]"
             />
             <input
               type="tel"
               name="tel"
               placeholder="Enter Phone No."
-              className="border border-gray-500 py-2 px-4 w-[120%] lg:w-[50%]"
+              className="border border-gray rounded-lg py-2 px-4 w-[120%] lg:w-[50%]"
             />
           </div>
           <input
             type="email"
             name="email"
             placeholder="Enter Email"
-            className="border border-gray-500 py-2 px-4 w-[100%]"
+            className="border border-gray rounded-lg py-2 px-4 w-[100%]"
           />
           <textarea
             name="comment"
             cols={30}
             rows={4}
             placeholder="Enter Comment"
-            className="border border-gray-500 py-2 px-4 w-[100%]"
+            className="border border-gray rounded-lg py-2 px-4 w-[100%]"
           ></textarea>
           <button
             type="submit"
