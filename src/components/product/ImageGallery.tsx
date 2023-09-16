@@ -17,7 +17,7 @@ const ImageGallery = ({ images }: any) => {
           <img
             src={selectedImage.src}
             alt="Large Image"
-            className="w-[550px] h-[500px]"
+            className="w-[150px] h-[200px] lg:w-[550px] lg:h-[420px]"
           />
         </div>
       )}
@@ -27,7 +27,7 @@ const ImageGallery = ({ images }: any) => {
             key={index}
             src={image.src}
             alt={`Image ${index + 1}`}
-            className="w-16 h-16 m-2 cursor-pointer transform hover:scale-110"
+            className="w-12 h-12 lg:w-16 lg:h-16 m-2 cursor-pointer transform hover:scale-110"
             onClick={() => handleImageClick(image)}
           />
         ))}

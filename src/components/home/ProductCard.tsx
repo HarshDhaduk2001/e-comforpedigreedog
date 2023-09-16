@@ -30,20 +30,22 @@ const ProductCard = ({ ProductData }: any) => {
               </span>
               <div className="px-4 py-3 w-full border-t border-[#E1E1E1] flex flex-col items-start">
                 <span className="text-[10px] line-through">
+                  From ₹ {i.productPrice}
+                </span>
+                <span className="text-[#FC8321] px-2">
                   From ₹
                   {Math.ceil(
                     i.productPrice - (i.productPrice * i.savePercentage) / 100
                   )}
                 </span>
-                <span className="text-[#FC8321] px-2">
-                  From ₹ {i.productPrice}
-                </span>
                 <span className="text-sm text-[#6E6E6E]">{i.productName}</span>
                 <span className="text-sm text-[#9A9A9A]">{i.BrandName}</span>
                 <span className="flex items-center justify-center mt-1">
-                  {new Array(Math.floor(i.productRating)).fill(0).map((_, starIndex: number) => (
-                    <StarIcon key={starIndex} />
-                  ))}
+                  {new Array(Math.floor(i.productRating))
+                    .fill(0)
+                    .map((_, starIndex: number) => (
+                      <StarIcon key={starIndex} />
+                    ))}
                   {new Array(5 - Math.floor(i.productRating))
                     .fill(0)
                     .map((_, starIndex: number) => (
@@ -56,7 +58,7 @@ const ProductCard = ({ ProductData }: any) => {
               </div>
             </Link>
             <button
-              className="text-[8px] md:text-[10px] text-white bg-orange rounded-lg px-[3px] md:p-2 w-[80%] mb-2 -mt-5 py-2"
+              className="text-[8px] md:text-[10px] text-white bg-orange rounded-lg px-[3px] md:p-2 w-[80%] mb-2 mt-0 py-2"
               onClick={() => console.log(i.id)}
             >
               Add to Cart
