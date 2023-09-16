@@ -1,3 +1,4 @@
+import Avatar from "./avatar";
 import Buy from "./buy";
 import Cart from "./cart";
 import Gpay from "./gpay";
@@ -9,4 +10,4 @@ import Rupay from "./rupay";
 import Upi from "./upi";
 import Visa from "./visa";
 
-export { Buy, Cart, Gpay, Location, MasterCard, Plus, Minus, Rupay, Upi, Visa };
+export { Avatar, Buy, Cart, Gpay, Location, MasterCard, Plus, Minus, Rupay, Upi, Visa };
