@@ -42,7 +42,7 @@ const ProductCard = ({ ProductData, Scroll = false }: any) => {
             <span className="bg-blue text-white text-[9px] py-1 px-2 rounded-tl-lg absolute top-0 left-0">
               Save Extra {i.savePercentage}%
             </span>
-            <span className="text-[10px] absolute right-2 top-36">
+            <span className="text-[10px] absolute right-5 lg:right-2 top-36">
               +{i.productCount} more
             </span>
             <div className="px-4 py-3 w-full border-t border-[#E1E1E1] flex flex-col items-start">
@@ -57,7 +57,7 @@ const ProductCard = ({ ProductData, Scroll = false }: any) => {
               </span>
               <span className="text-sm text-[#6E6E6E]">{i.productName}</span>
               <span className="text-sm text-[#9A9A9A]">{i.BrandName}</span>
-              <span className="flex items-center justify-center mt-1">
+              <span className="items-center justify-center mt-1 hidden lg:flex">
                 {new Array(
                   i.productRating.toString().split(".")[1] > 5
                     ? Math.ceil(i.productRating)
@@ -76,7 +76,30 @@ const ProductCard = ({ ProductData, Scroll = false }: any) => {
                   .map((_, starIndex: number) => (
                     <StarEmpty key={starIndex} />
                   ))}
-                <span className="text-[8px] text-[#9A9A9A] -mt-5 ml-8">
+                <span className="text-[9px] text-[#9A9A9A] ml-8">
+                  {i.productRating} | {i.productReviewCount} Reviews
+                </span>
+              </span>
+              <span className="flex items-center justify-center mt-1 lg:hidden">
+                {new Array(
+                  i.productRating.toString().split(".")[1] > 5
+                    ? Math.ceil(i.productRating)
+                    : Math.floor(i.productRating)
+                )
+                  .fill(0)
+                  .map((_, starIndex: number) => (
+                    <StarIcon key={starIndex} width={10} height={10} />
+                  ))}
+                {new Array(
+                  i.productRating.toString().split(".")[1] > 5
+                    ? 5 - Math.ceil(i.productRating)
+                    : 5 - Math.floor(i.productRating)
+                )
+                  .fill(0)
+                  .map((_, starIndex: number) => (
+                    <StarEmpty key={starIndex} width={10} height={10} />
+                  ))}
+                <span className="text-[8px] text-[#9A9A9A] ml-4">
                   {i.productRating} | {i.productReviewCount} Reviews
                 </span>
               </span>

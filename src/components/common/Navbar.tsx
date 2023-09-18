@@ -69,17 +69,19 @@ const Navbar = () => {
             <AvatarIcon />
             <span className="hidden lg:flex">Account</span>
           </span>
-          <span className="flex items-center justify-center gap-1">
-            <span className="relative">
-              <CartIcon />
-              <span className="bg-[#FFA45A] rounded-full w-4 h-4 flex items-center justify-center text-white text-sm font-bold absolute -top-2 -right-2">
-                <p className="absolute -top-[1px] left-0 text-xs text-white">
-                  10
-                </p>
+          <Link href={"/cart"}>
+            <span className="flex items-center justify-center gap-1">
+              <span className="relative">
+                <CartIcon />
+                <span className="bg-[#FFA45A] rounded-full w-4 h-4 flex items-center justify-center text-white text-sm font-bold absolute -top-2 -right-2">
+                  <p className="absolute -top-[1px] left-0 text-xs text-white">
+                    10
+                  </p>
+                </span>
               </span>
+              <span className="hidden lg:flex">Cart</span>
             </span>
-            <span className="hidden lg:flex">Cart</span>
-          </span>
+          </Link>
         </div>
       </div>
 
