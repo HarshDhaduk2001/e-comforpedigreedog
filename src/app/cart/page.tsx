@@ -136,7 +136,10 @@ const CartPage = () => {
         Woffy Cart
       </div>
       <div className="flex items-center justify-between">
-        <span className="text-orange">Cart</span>
+        <p className="flex items-center justify-center py-5">
+          Home &gt;&nbsp;
+          <span className="text-orange">Cart</span>
+        </p>
         <Link href={"/products"} className="underline text-gray">
           Continue Shopping
         </Link>
