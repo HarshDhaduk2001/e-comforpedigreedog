@@ -35,9 +35,13 @@ const page = () => {
   const [address, setAddress] = useState("");
   const [addressErr, setAddressErr] = useState(false);
   const [phone, setPhone] = useState("");
+  const [phoneErr, setPhoneErr] = useState(false);
   const [city, setCity] = useState("");
+  const [cityErr, setCityErr] = useState(false);
   const [state, setState] = useState("");
+  const [stateErr, setStateErr] = useState(false);
   const [pincode, setPincode] = useState("");
+  const [pincodeErr, setPincodeErr] = useState(false);
 
   const totalPrice = Products.reduce(
     (acc, product) => acc + product.quantity * product.price,
@@ -59,6 +63,10 @@ const page = () => {
         !emailRegex.test(email.trim())
     );
     setAddressErr(address.trim().length < 3 || address.trim().length > 50);
+    setPhoneErr(phone.trim().length < 10 || phone.trim().length > 10);
+    setCityErr(city.trim().length < 3 || city.trim().length > 20);
+    setStateErr(state.trim().length < 3 || state.trim().length > 20);
+    setPincodeErr(pincode.trim().length < 6 || pincode.trim().length > 6);
 
     const hasError =
       firstName.trim().length < 3 ||
@@ -67,14 +75,32 @@ const page = () => {
       lastName.trim().length > 15 ||
       email.trim().length < 10 ||
       email.trim().length > 30 ||
-      emailRegex.test(email.trim()) ||
+      !emailRegex.test(email.trim()) ||
       address.trim().length < 3 ||
-      address.trim().length > 50;
+      address.trim().length > 50 ||
+      phone.trim().length < 10 ||
+      phone.trim().length > 10 ||
+      city.trim().length < 3 ||
+      city.trim().length > 20 ||
+      state.trim().length < 3 ||
+      state.trim().length > 20 ||
+      pincode.trim().length < 6 ||
+      pincode.trim().length > 6;
 
     if (!hasError) {
-      console.log(firstName, lastName, email, address);
+      console.log(
+        firstName,
+        lastName,
+        email,
+        address,
+        phone,
+        city,
+        state,
+        pincode
+      );
     }
   };
+
   return (
     <div className="flex gap-10lg:px-44 lg:text-[16px] select-none">
       <div className="flex flex-col items-start w-[50%] py-10 pl-[12%] ">
@@ -175,26 +201,76 @@ const page = () => {
               type="text"
               name="city"
               placeholder="City"
-              className="border border-gray rounded-lg py-2 px-4 w-[40%]"
+              className={`border rounded-lg py-2 px-4 w-[40%] ${
+                cityErr
+                  ? "border-[#FF0000] placeholder:text-[#FF0000]"
+                  : "border-gray"
+              }`}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              onBlur={(e) =>
+                e.target.value.trim().length < 3 ||
+                e.target.value.trim().length > 20
+                  ? setCityErr(true)
+                  : setCityErr(false)
+              }
             />
             <input
               type="text"
               name="state"
               placeholder="State"
-              className="border border-gray rounded-lg py-2 px-4 w-[40%]"
+              className={`border rounded-lg py-2 px-4 w-[40%] ${
+                stateErr
+                  ? "border-[#FF0000] placeholder:text-[#FF0000]"
+                  : "border-gray"
+              }`}
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              onBlur={(e) =>
+                e.target.value.trim().length < 3 ||
+                e.target.value.trim().length > 20
+                  ? setStateErr(true)
+                  : setStateErr(false)
+              }
             />
             <input
               type="number"
               name="pincode"
               placeholder="Pin Code"
-              className="border border-gray rounded-lg py-2 px-4 w-[40%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className={`border rounded-lg py-2 px-4 w-[40%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+                pincodeErr
+                  ? "border-[#FF0000] placeholder:text-[#FF0000]"
+                  : "border-gray"
+              }`}
+              maxLength={6}
+              value={pincode}
+              onChange={(e) => setPincode(e.target.value)}
+              onBlur={(e) =>
+                e.target.value.trim().length < 6 ||
+                e.target.value.trim().length > 6
+                  ? setPincodeErr(true)
+                  : setPincodeErr(false)
+              }
             />
           </div>
           <input
             type="tel"
             name="tel"
             placeholder="Enter Phone No."
-            className="border border-gray rounded-lg py-2 px-4 w-full"
+            className={`border rounded-lg py-2 px-4 w-full ${
+              phoneErr
+                ? "border-[#FF0000] placeholder:text-[#FF0000]"
+                : "border-gray"
+            }`}
+            maxLength={10}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            onBlur={(e) =>
+              e.target.value.trim().length < 10 ||
+              e.target.value.trim().length > 10
+                ? setPhoneErr(true)
+                : setPhoneErr(false)
+            }
           />
           <div className="flex items-center justify-center gap-2 px-4 lg:px-0">
             <input type="checkbox" name="check" className="w-4 h-4" />
@@ -268,10 +344,7 @@ const page = () => {
               <span>Shipping Calculated at next step</span>
             </p>
             <p className="text-[12px]">
-              INR{" "}
-              <span className="text-[24px]">
-                ₹{(totalPrice * 1.18).toFixed(2)}
-              </span>
+              INR <span className="text-[24px]">₹{totalPrice.toFixed(2)}</span>
             </p>
           </div>
         </div>

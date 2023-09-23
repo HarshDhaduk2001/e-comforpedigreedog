@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import LogoIcon from "../../assets/icons/commonIcons/LogoIcon";
 import SearchIcon from "../../assets/icons/commonIcons/SearchIcon";
-import PhoneIcon from "../../assets/icons/commonIcons/PhoneIcon";
+import PhoneIcon from "../../assets/icons/commonIcons/HeartIcon";
 import AvatarIcon from "../../assets/icons/commonIcons/AvatarIcon";
 import CartIcon from "../../assets/icons/commonIcons/CartIcon";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,8 @@ import Link from "next/link";
 const navItem = [
   { name: "Home", link: "/" },
   { name: "Products", link: "/products" },
+  { name: "Wishlist", link: "/wishlist" },
+  { name: "Profile", link: "/profile" },
   { name: "About Us", link: "/aboutUs" },
   { name: "Contact Us", link: "/contactUs" },
 ];
@@ -63,11 +65,11 @@ const Navbar = () => {
         <div className="flex items-center justify-center w-[30%] gap-3 lg:gap-8">
           <span className="items-center justify-center gap-1 hidden lg:flex">
             <PhoneIcon />
-            Support
+            <Link href={"/wishlist"}>Wishlist</Link>
           </span>
-          <span className="flex items-center justify-center gap-1">
+          <span className="items-center justify-center gap-1 hidden lg:flex">
             <AvatarIcon />
-            <span className="hidden lg:flex">Account</span>
+            <Link href={"/profile"}>Profile</Link>
           </span>
           <Link href={"/cart"}>
             <span className="flex items-center justify-center gap-1">
